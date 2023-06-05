@@ -8,14 +8,14 @@ public class Prodotto {
     private String description;
     private double price;
 
-    private final double ivaPrice;
+    private double iva;
 
-    public Prodotto(String name, String description, double price) {
+    public Prodotto(String name, String description, double price, double iva) {
         this.code = generateRandomCode();
         this.name = name;
         this.description = description;
         this.price = price;
-        this.ivaPrice = generateIvaPrice();
+        this.iva = iva;
     }
 
     private int generateRandomCode() {
@@ -51,14 +51,12 @@ public class Prodotto {
         this.price = price;
     }
 
-
-    private double generateIvaPrice() {
-        double iva = 0.22;
-        return price + (price * iva);
+    public double getIvaPrice() {
+        return price + (price * iva/100);
     }
 
-    public double getIvaPrice() {
-        return ivaPrice;
+    public void setIva(double iva) {
+        this.iva = iva;
     }
 
     public String getExtendedName() {

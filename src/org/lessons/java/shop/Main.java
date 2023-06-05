@@ -13,8 +13,10 @@ public class Main {
         String description =scan.nextLine();
         System.out.print("Prezzo del Prodotto: ");
         double price = Double.parseDouble(scan.nextLine());
+        System.out.print("Iva: ");
+        double iva = Double.parseDouble(scan.nextLine());
 
-        Prodotto product = new Prodotto(name, description, price);
+        Prodotto product = new Prodotto(name, description, price, iva);
 
 
         System.out.println("Codice: " + product.getCode());
@@ -36,6 +38,10 @@ public class Main {
         System.out.print("Nuovo Prezzo: ");
         double newPrice = Double.parseDouble(scan.nextLine());
         product.setPrice(newPrice);
+
+        System.out.print("Nuova Iva: ");
+        double newIva = Double.parseDouble(scan.nextLine());
+        product.setIva(newIva);
 
         System.out.println("Nuovo nome: " + product.getName());
         System.out.println("Nuova descrizione: " + product.getDescription());
